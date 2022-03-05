@@ -54,5 +54,10 @@ const addProductToCart = name => {
     const cartStringfied = JSON.stringify(cart)
     localStorage.setItem('cart', cartStringfied);
 }
+
+plaseOrder = () => {
+    document.getElementById('products').textContent = '';
+    localStorage.removeItem('cart')
+}
 showDisplayProduct()
 // displayLocalStorageCart()
