@@ -50,7 +50,12 @@ const getCart = () => {
 
 const addProductToCart = name => {
     const cart = getCart();
-    cart[name] = 1;
+    if (cart[name]) {
+        cart[name] = cart[name] + 1;
+    }
+    else {
+        cart[name] = 1;
+    }
     const cartStringfied = JSON.stringify(cart)
     localStorage.setItem('cart', cartStringfied);
 }
